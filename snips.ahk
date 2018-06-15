@@ -320,6 +320,9 @@ SnipSend(snipid) {
     ; Backup Clipboard
     ClipSaved := ClipboardAll
     
+    ; TESTING
+    
+
     ; Send the Snip to clipboard and paste
     Clipboard := Snip
     ClipWait
@@ -338,6 +341,9 @@ SnipSend(snipid) {
     if (ReversePos1)
         SendInput {Left %ReversePos1%}    
     
+    ; Wait for clipboard to finish sending, otherwise it will paste the restored clipboard.
+    Sleep, 300
+
     ; Restore Clipboard
     Clipboard := ClipSaved
     
